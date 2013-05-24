@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "HTML5 security",
+  "description": "基于chrome扩展的HTML5安全防御系统",
+  "version": "0.2",
+
+  "browser_action": {
+    "default_icon": "img/google_chrome.ico"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*.def.com/*"],
+      "css": ["css/mystyle.css"],
+	  "js": ["document_content_start.js"],
+	  "run_at": "document_end"
+    }
+  ],
+ "web_accessible_resources": [
+    "page_inject.js",
+	"message_api.js"
+  ]
+}
